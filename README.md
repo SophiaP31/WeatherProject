@@ -11,3 +11,11 @@ windows: `venv\Scripts\activate`
 `git add -A`
 `git commit -a -m "message"`
 `git push origin master`
+
+
+# Goals
+Webscrape data
+
+Put into pandas
+
+Predict next days data
