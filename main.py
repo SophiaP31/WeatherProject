@@ -12,7 +12,11 @@ r = requests.get("https://www.usclimatedata.com/climate/alabama/united-states/31
 # Nick's example
 t = r.text
 indexOf = t.find('var the_data = \'[{')
-print(t[indexOf: indexOf + 100])
+# print(t[indexOf: indexOf + 100])
+
+indexEnd = t[indexOf:].find("var precipitation_max")
+
+print(t[indexOf: indexOf+indexEnd-1])
 
 '''
 soup = bs(r.content)
