@@ -41,3 +41,11 @@ print(the_New_data[0])
 
 
 # Step 2: Put data into a pandas dataframe
+df = pd.DataFrame(ourList)
+print(df.head())
+
+# Step 3:
+# Pick a state
+# Plot a line graph for that state
+# x-axis = month
+# y-axis = precipitation
