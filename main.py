@@ -15,8 +15,17 @@ indexOf = t.find('var the_data = \'[{')
 # print(t[indexOf: indexOf + 100])
 
 indexEnd = t[indexOf:].find("var precipitation_max")
+chunk = t[indexOf: indexOf+indexEnd-1]
 
-print(t[indexOf: indexOf+indexEnd-1])
+start = chunk.find("'")
+end = chunk.find("';")
+
+ourList = (chunk[start+1:end])
+
+ourList = json.loads(ourList)
+
+print(type(ourList))
+print(ourList)
 
 '''
 soup = bs(r.content)
