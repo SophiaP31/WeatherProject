@@ -2,6 +2,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
 import json
+import matplotlib.pyplot as plt
 
 
 # Step 1: Webscrape the data
@@ -20,12 +21,12 @@ chunk = t[indexOf: indexOf+indexEnd-1]
 start = chunk.find("'")
 end = chunk.find("';")
 
-ourList = (chunk[start+1:end])
+ourList = chunk[start+1:end]
 
 ourList = json.loads(ourList)
 
-print(type(ourList))
-print(ourList)
+# print(type(ourList))
+# print(ourList)
 
 '''
 soup = bs(r.content)
@@ -42,10 +43,21 @@ print(the_New_data[0])
 
 # Step 2: Put data into a pandas dataframe
 df = pd.DataFrame(ourList)
-print(df.head())
+#
+# print(df)
 
-# Step 3:
-# Pick a state
-# Plot a line graph for that state
-# x-axis = month
-# y-axis = precipitation
+
+#Step 3: Make a graph!
+
+months =[]
+for i in ourList:
+    months.append(i["Month"])
+precipitations =[]
+for i in ourList:
+    precipitations.append(i["Precipitation"])
+#
+# print(months)
+# print(precipitations)
+
+plt.plot(months,precipitations)
+plt.show()
