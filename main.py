@@ -45,6 +45,7 @@ print(the_New_data[0])
 df = pd.DataFrame(ourList)
 #
 # print(df)
+df.plot()
 
 
 #Step 3: Make a graph!
